@@ -29,6 +29,29 @@
         border-radius: 16px;
         padding: 20px;
       }
+      .header-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .download-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border: 1px solid rgba(247, 201, 72, 0.3);
+        border-radius: 999px;
+        background: linear-gradient(180deg, rgba(247, 201, 72, 0.18), rgba(247, 201, 72, 0.08));
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .download-link:hover {
+        border-color: rgba(247, 201, 72, 0.5);
+      }
       .eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
       h1 { margin: 8px 0 8px; font-size: 28px; line-height: 1.1; }
       p { color: var(--muted); margin: 0; }
@@ -64,9 +87,16 @@
   <body>
     <main class="shell">
       <section class="card">
-        <div class="eyebrow">AI image generation</div>
-        <h1>Install guide</h1>
-        <p>Use this page when the extension shows <code>Not ready</code> or when you need to reload the unpacked folder.</p>
+        <div class="header-row">
+          <div>
+            <div class="eyebrow">AI image generation</div>
+            <h1>Install guide</h1>
+            <p>Use this page when the extension shows <code>Not ready</code> or when you need to reload the unpacked folder.</p>
+          </div>
+          <a class="download-link" href="https://github.com/ViuGiaLai/AI-image-generation" target="_blank" rel="noreferrer">
+            Open GitHub repo
+          </a>
+        </div>
 
         <div class="grid">
           <div class="box">
