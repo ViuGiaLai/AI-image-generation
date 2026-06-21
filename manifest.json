@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "AI image generation",
+  "short_name": "AI image generation",
+  "version": "1.0.0",
+  "description": "Bulk image prompt generator for labs.google and Google Labs.",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://srt2prompt.vercel.app/*",
+    "http://localhost:3000/*",
+    "http://127.0.0.1:3000/*",
+    "https://labs.google/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open AI image generation"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "bridge.js"
+      ],
+      "matches": [
+        "https://srt2prompt.vercel.app/*",
+        "http://localhost:3000/*",
+        "http://127.0.0.1:3000/*"
+      ],
+      "all_frames": false,
+      "run_at": "document_idle"
+    },
+    {
+      "js": [
+        "assets/content.ts-3_oinKNn.js"
+      ],
+      "matches": [
+        "http://localhost:3000/*",
+        "http://127.0.0.1:3000/*",
+        "https://labs.google/*"
+      ],
+      "all_frames": false,
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "http://localhost:3000/*",
+        "http://127.0.0.1:3000/*",
+        "https://labs.google/*"
+      ],
+      "resources": [
+        "assets/content.ts-3_oinKNn.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ]
+}

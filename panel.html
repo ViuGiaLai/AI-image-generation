@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tao Anh AI</title>
+    <link rel="stylesheet" href="panel.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="eyebrow-row">
+            <div class="eyebrow">SRT2Prompt bridge</div>
+            <button id="connectionBadge" class="state-badge state-muted" type="button">Idle</button>
+          </div>
+          <h1>Tao Anh AI</h1>
+          <p>Receive prompt queues from SRT2Prompt and push them to labs.google without retyping.</p>
+        </div>
+        <button id="reloadBtn" class="ghost">Reload</button>
+      </header>
+
+      <section class="workspace">
+        <div class="card queue-panel">
+          <div class="row">
+            <label for="queueInput">Prompt queue</label>
+            <div id="promptCount" class="badge">0 prompts</div>
+          </div>
+          <textarea id="queueInput" class="hidden-input" placeholder="Paste or import prompt queue here..."></textarea>
+          <div id="promptList" class="prompt-list"></div>
+        </div>
+
+        <aside class="stack">
+          <section class="card action-panel">
+            <div class="panel-head">
+              <div>
+                <div class="eyebrow">Actions</div>
+                <h2>Quick controls</h2>
+              </div>
+              <button id="loadBridgeBtn" class="ghost ghost-tight" type="button">Load</button>
+            </div>
+            <div class="primary-action">
+              <button id="sendBtn" class="primary">Send to labs.google</button>
+            </div>
+            <div class="actions">
+              <button id="pasteBtn" class="secondary" type="button">Paste clipboard</button>
+              <button id="openLabsBtn" class="secondary" type="button">Open labs.google</button>
+            </div>
+          </section>
+
+          <section class="card status-panel">
+            <div class="panel-head">
+              <div>
+                <div class="eyebrow">Status</div>
+                <h2>Connection</h2>
+              </div>
+            </div>
+            <div id="status" class="status">Waiting for import...</div>
+            <p class="muted">
+              The extension stores your queue locally and keeps the latest import ready for reuse.
+            </p>
+          </section>
+
+          <section class="note">
+            <div class="panel-head">
+              <div>
+                <div class="eyebrow">Need help?</div>
+                <h2>Install guide</h2>
+              </div>
+              <button id="guideBtn" class="ghost ghost-tight" type="button">Open</button>
+            </div>
+            <p class="muted">
+              If the extension is not installed yet, open the guide and load the TaoAnhAI folder as unpacked.
+            </p>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <script src="panel.js"></script>
+  </body>
+</html>
